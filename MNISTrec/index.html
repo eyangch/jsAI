@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.0.0/dist/tf.min.js"></script>
+	<script src="predict.js"></script>
+	<style>
+		body{
+			padding:10px;
+		}
+		canvas{
+			border:1px solid #000000;
+		}
+		pre{
+			font-size:80%
+		}
+		.big{
+			font-size:110%;
+		}
+	</style>
+</head>
+<body>
+	<p>Draw Here</p>
+	<canvas id="draw" width="280" height="280"></canvas>
+	<canvas id="op" width="28" height="28"></canvas>
+	<button onclick="clearcanvas()">Clear</button>
+	<button onclick="predict()">Predict!!!</button>
+	<pre id="pred2" class="big"></pre>
+	<pre id="pred"></pre>
+	<div id="output"></div>
+	<div id="epoch"></div>
+	<div id="statusBatch"></div>
+</body>
+</html>
