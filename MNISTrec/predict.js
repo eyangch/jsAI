@@ -125,14 +125,27 @@ window.onload = function(){
 	canv.addEventListener("mousemove", function(event) {
 		drawPoints(canv, canv2, event);
 	});
+	canv.addEventListener("touchmove", function(event) {
+		drawPoints(canv, canv2, event.touches[0]);
+	});
 	canv.addEventListener("mousedown", function(event) {
 		drawing = true;
 		drawPoints(canv, canv2, event);
+	});
+	canv.addEventListener("touchstart", function(event) {
+		drawing = true;
+		drawPoints(canv, canv2, event.touches[0]);
 	});
 	document.addEventListener("mousedown", function(event) {
 		drawing = true;
 	});
 	document.addEventListener("mouseup", function(event) {
+		drawing = false;
+	});
+	document.addEventListener("touchstart", function(event) {
+		drawing = true;
+	});
+	document.addEventListener("touchend", function(event) {
 		drawing = false;
 	});
 }
